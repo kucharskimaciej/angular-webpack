@@ -11,7 +11,7 @@ const config = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['', '.js', '.json'],
+        extensions: ['', '.js', '.less', '.html', '.json'],
         alias: {
             app: path.resolve(__dirname, 'source/app.js')
         }
@@ -19,6 +19,7 @@ const config = {
     module: {
         loaders: [
             { test: /\.js$/, loaders: ['ng-annotate', 'babel?presets[]=es2015', 'import-glob'], exclude: /node_modules/ },
+            { test: /\.less$/, loaders: ['style', 'css', 'less', 'import-glob'] },
             { test: /\.html$/, loaders: ['raw']}
         ]
     },
