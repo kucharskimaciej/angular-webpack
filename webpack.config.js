@@ -1,10 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
+const LessPluginCleanCSS = require('less-plugin-clean-css');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 const isProdEnv = process.env.WEBPACK_ENV === 'production';
 
 const config = {
     devtool: 'source-map',
+    debug: !isProdEnv,
     entry: './source/index',
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -24,8 +28,14 @@ const config = {
         ]
     },
     plugins: isProdEnv ? [
-        new webpack.optimize.UglifyJsPlugin()
-    ] : []
+        new webpack.optimize.UglifyJsPlugin(),
+        new CopyWebpackPlugin([{ from: './source/index.html', to: 'index.html' }])
+    ] : [],
+    lessLoader: {
+        lessPlugins: isProdEnv ? [
+            new LessPluginCleanCSS({ advanced: true })
+        ] : []
+    }
 };
 
 module.exports = config;
