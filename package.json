@@ -1,0 +1,35 @@
+{
+  "name": "angular-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base ./source --progress --history-api-fallback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kucharskimaciej/angular-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kucharskimaciej/angular-webpack/issues"
+  },
+  "homepage": "https://github.com/kucharskimaciej/angular-webpack#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.24.0",
+    "import-glob": "^1.4.0",
+    "ng-annotate": "^1.2.1",
+    "ng-annotate-loader": "^0.1.1",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.1.0-beta.21",
+    "webpack-dev-server": "^2.0.0-beta"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
